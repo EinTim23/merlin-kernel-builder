@@ -26,10 +26,10 @@ clean:
 EOF
 
 make ufdt_apply_overlay
-cd /home/runner/work/lancelot-kernel-builder/lancelot-kernel-builder/android_kernel_xiaomi_mt6768/
+cd /home/runner/work/merlin-kernel-builder/merlin-kernel-builder/android_kernel_xiaomi_mt6768/
 mkdir out
 export CROSS_COMPILE="aarch64-linux-android-"
 export CROSS_COMPILE_ARM32="arm-linux-androideabi-"
 make O=out merlin_defconfig
 make O=out CC=$CC -j$(nproc --all)
-curl --upload-file /home/runner/work/lancelot-kernel-builder/lancelot-kernel-builder/android_kernel_xiaomi_mt6768/out/arch/arm64/boot/Image.gz-dtb https://transfer.sh/hal-merlin.img
+curl --upload-file /home/runner/work/merlin-kernel-builder/merlin-kernel-builder/android_kernel_xiaomi_mt6768/out/arch/arm64/boot/Image.gz-dtb https://transfer.sh/hal-merlin.img
