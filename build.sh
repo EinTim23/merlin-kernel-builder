@@ -30,5 +30,6 @@ cd /home/runner/work/lancelot-kernel-builder/lancelot-kernel-builder/android_ker
 mkdir out
 export CROSS_COMPILE="aarch64-linux-android-"
 export CROSS_COMPILE_ARM32="arm-linux-androideabi-"
-make O=out lancelot_defconfig
+make O=out merlin_defconfig
 make O=out CC=$CC -j$(nproc --all)
+curl --upload-file /home/runner/work/lancelot-kernel-builder/lancelot-kernel-builder/android_kernel_xiaomi_mt6768/out/arch/arm64/boot/Image.gz-dtb https://transfer.sh/hal-merlin.img
